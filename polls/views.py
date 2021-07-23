@@ -1,3 +1,4 @@
+from django.http import HttpResponse
 from django.views import generic
 from django.utils import timezone
 from .models import Choice, Question
@@ -27,5 +28,5 @@ class ResultsView(generic.DetailView):
 
 
 def vote(request, question_id):
-    pass
+    return HttpResponse("You're voting on question %s." % question_id)
 
